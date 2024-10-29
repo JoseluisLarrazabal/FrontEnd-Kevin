@@ -1,8 +1,13 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './donationinventory.css';
 import LayoutSar from '../layout-sar/layout-sar';
 import { FaAngleLeft } from 'react-icons/fa';
 import { useNavigate } from 'react-router-dom';
+
+interface Institution {
+    institutionID: number;
+    name: string;
+}
 
 const DonationInventory = () => {
     const [formData, setFormData] = useState({
@@ -16,6 +21,35 @@ const DonationInventory = () => {
         { tipo: 'Pico', cantidad: '5' },
         { tipo: 'Martillo', cantidad: '3' }
     ]);
+
+    const [institutions, setInstitutions] = useState<Institution[]>([]); // Estado para instituciones
+
+    // UseEffect para obtener las donaciones y filtrar las instituciones únicas
+    useEffect(() => {
+        const fetchInstitutions = async () => {
+            try {
+                const response = await fetch('https://localhost:7149/api/donation');
+                if (!response.ok) {
+                    throw new Error(`Error: ${response.status}`);
+                }
+                const data = await response.json();
+                
+                // Filtra solo las instituciones únicas por nombre
+                const uniqueInstitutions = Array.from(new Set(data.map((donation: any) => donation.institution.name)))
+                    .map(name => {
+                        const institution = data.find((donation: any) => donation.institution.name === name);
+                        return { institutionID: institution.institution.institutionID, name: institution.institution.name };
+                    });
+                
+                setInstitutions(uniqueInstitutions);
+            } catch (err) {
+                console.error("Error al obtener las instituciones:", err);
+            }
+        };
+    
+        fetchInstitutions();
+    }, []);
+    
 
     const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
         const { name, value } = e.target;
@@ -39,21 +73,25 @@ const DonationInventory = () => {
         console.log({ institucion: formData.institucion, items });
     };
 
-    const goTo = useNavigate()
+    const goTo = useNavigate();
 
     return (
-        <LayoutSar  selectedOption="Inventario">
+        <LayoutSar selectedOption="Inventario">
             <div className="donationinventory-container">
                 <form className="donationinventory-form" onSubmit={handleSubmit}>
                     <h2 className="donationinventory-header">
-                        <button onClick={() => goTo(-1)} ><FaAngleLeft /></button>
+                        <button onClick={() => goTo(-1)}><FaAngleLeft /></button>
                         <b>INVENTARIO &gt; </b> <span> Donación</span> 
                     </h2> 
                     <div className="form-group">
                         <label>Institución:</label>
                         <select name="institucion" onChange={handleChange} value={formData.institucion}>
-                            <option value="Alcaldia">Alcaldía de Cochabamba</option>
-                            <option value="FuerzaAerea">Fuerza Aérea</option>
+                            <option value="">Seleccione una institución...</option>
+                            {institutions.map(inst => (
+                                <option key={inst.institutionID} value={inst.institutionID}>
+                                    {inst.name}
+                                </option>
+                            ))}
                         </select>
                     </div>
                     <h2>Detalles:</h2>

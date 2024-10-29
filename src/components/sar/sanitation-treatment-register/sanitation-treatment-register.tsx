@@ -1,20 +1,19 @@
-
 import './sanitation-treatment-register.css';
 import LayoutSar from '../layout-sar/layout-sar';
 import { useNavigate } from 'react-router-dom';
 import { FaAngleLeft } from 'react-icons/fa';
 import { useEffect, useState } from 'react';
 
-interface TreatmentRecord {
-    recordTreatmentsID: number; 
-    attentionDate: Date; 
+interface RecordTreatment {
+    recordTreatmentsID: number;
+    attentionDate: Date;
     diagnosis: string;
     treatment: string;
-    person: string;
-    status: number;
-    registerDate: Date;
-    lastUpdate: Date;
-    userID: number; 
+    person: {
+        personID: number;
+        name: string;
+        lastname: string;
+    };
 }
 
 const TreatmentRegister: React.FC = () => {
@@ -25,9 +24,10 @@ const TreatmentRegister: React.FC = () => {
         tratamiento: ''
     });
 
-    const [records, setRecords] = useState<TreatmentRecord[]>([]);
+    const [patients, setPatients] = useState<{ id: number; fullName: string }[]>([]);
     const [loading, setLoading] = useState<boolean>(false);
     const [error, setError] = useState<string | null>(null);
+    const [success, setSuccess] = useState<string | null>(null);
 
     const navigate = useNavigate();
 
@@ -43,29 +43,74 @@ const TreatmentRegister: React.FC = () => {
         }));
     };
 
+    useEffect(() => {
+        const fetchPatients = async () => {
+            setLoading(true);
+            try {
+                const response = await fetch('https://localhost:7149/api/RecordTreatments');
+                if (!response.ok) {
+                    throw new Error(`Error: ${response.status}`);
+                }
+                const data: RecordTreatment[] = await response.json();
+
+                // Extrae los nombres completos únicos de los pacientes
+                const uniquePatients = Array.from(
+                    new Map(
+                        data.map(record => [record.person.personID, { id: record.person.personID, fullName: `${record.person.name} ${record.person.lastname}` }])
+                    ).values()
+                );
+
+                setPatients(uniquePatients);
+            } catch (err) {
+                if (err instanceof Error) {
+                    setError(err.message);
+                } else {
+                    setError('An unknown error occurred');
+                }
+            } finally {
+                setLoading(false);
+            }
+        };
+
+        fetchPatients();
+    }, []);
+
+
     const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
-        console.log(formData);
+        const payload = {
+            AttentionDate: formData.fecha,
+            Diagnosis: formData.diagnostico,
+            Treatment: formData.tratamiento,
+            Person: {
+                PersonID: parseInt(formData.paciente)
+            },
+            Status: 1,
+            RegisterDate: new Date().toISOString(),
+            LastUpdate: new Date().toISOString(),
+            UserID: 1
+        };
 
-        // Aquí se implementa el código para la obtención de datos
-        setLoading(true);
         try {
-            const response = await fetch('https://localhost:7149/api/RecordTreatments'); 
+            const response = await fetch('https://localhost:7149/api/RecordTreatments', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(payload),
+            });
+
             if (!response.ok) {
                 throw new Error(`Error: ${response.status}`);
             }
-            const data: TreatmentRecord[] = await response.json();
-            setRecords(data);
-        } catch (err) {
-            if (err instanceof Error) {
-                setError(err.message);
-            } else {
-                setError('An unknown error occurred');
-            }
-        } finally {
-            setLoading(false);
+
+            const result = await response.json();
+            console.log('Registro exitoso:', result.message);
+            // Opcional: agregar navegación o confirmación de éxito
+        } catch (error) {
+            console.error('Error al registrar el tratamiento:', error);
         }
     };
+
+
 
     if (loading) {
         return <div>Cargando...</div>;
@@ -83,6 +128,8 @@ const TreatmentRegister: React.FC = () => {
                         <button type="button" onClick={handleBackClick}><FaAngleLeft /></button>
                         <b>SANIDAD &gt; </b> <span>Crear Tratamiento</span>
                     </h2>
+                    {success && <div className="success-message">{success}</div>}
+                    {error && <div className="error-message">{error}</div>}
                     <h3>DATOS PERSONALES</h3>
                     <div className="form-group">
                         <label>Fecha de Diagnóstico:</label>
@@ -92,10 +139,14 @@ const TreatmentRegister: React.FC = () => {
                         <label>Paciente:</label>
                         <select name="paciente" onChange={handleChange} value={formData.paciente}>
                             <option value="">Seleccione...</option>
-                            <option value="Paciente 1">Paciente 1</option>
-                            <option value="Paciente 2">Paciente 2</option>
-                            <option value="Paciente 3">Paciente 3</option>
+                            {patients.map((patient) => (
+                                <option key={patient.id} value={patient.id}>
+                                    {patient.fullName}
+                                </option>
+                            ))}
                         </select>
+
+
                     </div>
                     <h3>DATOS MÉDICOS</h3>
                     <div className="form-group">
