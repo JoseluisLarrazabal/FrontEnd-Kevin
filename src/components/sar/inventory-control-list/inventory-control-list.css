@@ -1,0 +1,91 @@
+.inventory-list-container {
+  margin: 20px;
+  padding: 20px;
+  border-radius: 10px;
+  background-color: #ffffff; 
+}
+
+.inventory-list-title {
+  color: #000000;
+  font-size: 24px;
+  text-align: left;
+  margin-bottom: 20px;
+  font-weight: normal;
+}
+
+.inventory-list-header {
+  font-weight: normal;
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+  .inventory-list-header button {
+    background: none;
+    border: none;
+    padding: 0;
+    font-size: 2rem;
+    cursor: pointer;
+    display: flex;
+    align-items: end;
+    margin-right: 10px;
+  }
+
+.inventory-list-controls-container {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end; 
+  margin-bottom: 20px;
+  gap: 10px; 
+  flex-wrap: wrap;
+}
+
+.inventory-list-search-container {
+  display: flex;
+  align-items: center;
+  flex-grow: 1; 
+}
+
+.inventory-list-search-input {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  flex: 1;
+}
+
+.inventory-list-type-select {
+  width: 200px; 
+  padding: 10px;
+  border: 1px solid #000000;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px; 
+  margin-left: 10px;
+}
+
+.inventory-list-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+  background-color: #171A4A;
+  color: white;
+  border-radius: 8px;
+  border-color: #171A4A;
+}
+
+.inventory-list-table th, .inventory-list-table td {
+  padding: 12px;
+  text-align: left;
+  border: 1px solid #ffffff;
+}
+
+.inventory-list-btn-options {
+  display: flex;
+  background: none;
+  border: none;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 30px;
+}

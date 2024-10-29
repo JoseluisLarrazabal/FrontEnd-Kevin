@@ -1,0 +1,118 @@
+.recruitment-form-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    background-color: #ffffff;
+    min-height: 100vh;
+    width: 100%;
+}
+
+.recruitment-form {
+    background-color: #EEEEEE;
+    padding: 2rem;
+    border-radius: 1px;
+    width: 100%;
+    max-width: 1000px;
+    overflow-y: auto;
+    color: #000000;
+}
+
+.recruitment-form-container h3 {
+    color: #000000;
+    margin-bottom: 1.5rem;
+    font-size: 1.5rem;
+    text-align: center; 
+    width: 100%; /* Asegura que el ancho sea el 100% */
+    max-width: 800px; /* Alinea con el formulario */
+}
+
+.recruitment-form .form-group {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 1rem;
+    width: 100%;
+}
+
+.recruitment-form .form-group-row {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+.recruitment-form .form-group-row .form-group {
+    flex: 1;
+    margin-right: 1rem;
+}
+
+.recruitment-form .form-group-row .form-group:last-child {
+    margin-right: 0;
+}
+
+.recruitment-form label {
+    margin-bottom: 0.5rem;
+    color: #333;
+    font-weight: bold;
+    text-align: left; 
+}
+
+.recruitment-form input[type="text"],
+.recruitment-form input[type="email"],
+.recruitment-form input[type="date"] {
+    padding: 0.5rem;
+    border: 1.5px solid #333;
+    border-radius: 3px;
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+}
+
+.recruitment-form input[type="checkbox"] {
+    margin-right: 0.5rem;
+}
+
+.recruitment-form .form-group.file-upload {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.recruitment-form .form-group.file-upload label {
+    margin-bottom: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    cursor: pointer;
+}
+
+.recruitment-form input[type="file"] {
+    display: none; /* Oculta el input de archivo real */
+}
+
+.recruitment-form button {
+    padding: 0.7rem;
+    margin-top: 1rem;
+    background-color: #2F2C79;
+    color: #ffffff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: bold;
+    width: 150px; 
+    align-self: center; 
+}
+
+.recruitment-form button:hover {
+    background-color: #000;
+}
+
+.file-upload-label {
+    display: inline-block;
+    cursor: pointer;
+}
+
+.file-upload-label img {
+    width: 50px; /* Ajusta el tamaño según sea necesario */
+    height: 50px;
+}

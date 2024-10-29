@@ -1,0 +1,70 @@
+.sanation-list-container {
+    margin: 35px;
+    padding: 30px;
+    border-radius: 10px;
+    background-color: #ffffff; 
+}
+
+.sanation-list-actions {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+    .sanation-list-actions .sanation-list-add {
+      display: flex;
+      background: none;
+      border: none;
+      padding: 0;
+      font-size: 3rem;
+      cursor: pointer;
+      align-items: end;
+    }
+
+.sanation-list-table {
+    border-collapse: collapse;
+    background-color: #171A4A;
+    border-radius: 7px;
+    overflow: hidden;
+    width: 100%;
+}
+
+.sanation-list-table th,
+.sanation-list-table td {
+    padding: 0.75rem;
+    text-align: left;
+    color: #fff;
+}
+
+.sanation-list-table th {
+    background-color: #171A4A;
+    font-weight: bold;
+}
+
+.sanation-list-table tbody tr {
+    background-color: #24365C;
+}
+
+.sanation-list-table tbody tr:nth-child(even) {
+    background-color: #1A2C48;
+}
+
+.sanation-list-table tbody tr:hover {
+    background-color: #2C4878;
+}
+
+.sanation-list-icon-button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    margin: 0;
+    color: #fff;
+    font-size: 1.5rem;
+}
+
+.sanation-list-icon-button:hover {
+    color: #ccc;
+}
+
+

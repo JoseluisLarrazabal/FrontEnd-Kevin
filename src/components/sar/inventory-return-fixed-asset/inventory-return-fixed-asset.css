@@ -1,0 +1,89 @@
+.InventoryReturnFixedAsset-container {
+  margin: 0 35px;
+  padding: 50px;
+  border-radius: 10px;
+  background-color: #ffffff; 
+}  
+
+.InventoryReturnFixedAsset-header {
+  font-weight: normal;
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+  .InventoryReturnFixedAsset-header button {
+    background: none;
+    border: none;
+    padding: 0;
+    font-size: 2rem;
+    cursor: pointer;
+    display: flex;
+    align-items: end;
+    margin-right: 10px;
+  }
+
+.InventoryReturnFixedAsset-form-container {
+  background-color: #EEEEEE; 
+  padding: 2rem;
+  border-radius: 5px;
+  overflow-y: auto;
+  color: #000000;
+}
+
+.table-inventory-return-fixed-asset {
+  margin-top: 10px;
+  border-collapse: collapse;
+  background-color: #141c4b;
+  color: black;
+  text-align: center;
+  width: 100%;
+}
+
+.table-inventory-return-fixed-asset th,
+.table-inventory-return-fixed-asset td {
+  padding: 0.75rem;
+  text-align: center;
+  border: 1px solid #dddddd;
+}
+
+.table-inventory-return-fixed-asset th {
+  background-color: #2F2C79;
+  color: #ffffff;
+  font-weight: bold;
+}
+
+.table-inventory-return-fixed-asset tbody tr {
+  background-color: #f2f2f2;
+}
+
+.inventory-return-fixed-asset-details {
+  display: flex;
+  margin-bottom: 10px;
+}
+
+.inventory-return-fixed-asset-details .form-group{
+  width: 100%;
+  margin: 0 10px;
+}
+  
+.inventory-return-fixed-asset-actions-table {
+  font-size: 20px;
+}
+
+  .inventory-return-fixed-asset-actions-table svg {
+    cursor: pointer;
+  }
+
+
+.inventory-return-fixed-asset-add-button{
+  display: flex;
+  justify-content: flex-end;
+  margin-right: 10px;
+}
+
+.inventory-return-fixed-asset-register-button{
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+}

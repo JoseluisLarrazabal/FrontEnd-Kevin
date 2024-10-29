@@ -1,0 +1,41 @@
+.sar-search-bar {
+    display: flex;
+}
+
+.sar-search-bar-item {
+    display: flex;
+    align-items: center;
+    background-color: #fff;
+    border: 1px solid #090808;
+    border-radius: 8px;
+    height: 2rem;
+    padding-left: 0.5rem;
+    margin: 5px 5px 5px 0
+}
+  
+.sar-search-input {
+    border: none;
+    outline: none;
+    padding: 5px;
+    width: 150px;
+    margin-right: 10px;
+    appearance: none;
+    -webkit-appearance: none;
+}
+
+.sar-search-button {
+    height: 100%;  
+    background-color: #090808;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    color: #ffffff;
+    font-size: 20px;
+    border-radius: 0 8px 8px 0;
+}
+
+.sar-search-button:hover{
+    background-color: #2a2a2a;
+    color: #eeeeee;
+}

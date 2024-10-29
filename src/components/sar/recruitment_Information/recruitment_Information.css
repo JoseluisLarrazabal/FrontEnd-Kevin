@@ -1,0 +1,75 @@
+.recrutmentInformation-container {
+    margin: 35px;
+    padding: 30px;
+    border-radius: 10px;
+    background-color: #ffffff; 
+}
+
+.recrutmentInformation-header {
+    font-weight: normal;
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+  
+  .recrutmentInformation-header button {
+        background: none;
+        border: none;
+        padding: 0;
+        font-size: 2rem;
+        cursor: pointer;
+        display: flex;
+        align-items: end;
+        margin-right: 10px;
+  }
+
+.recrutmentInformation-card-container{
+    width: 50%;
+    margin: 0 auto;
+}
+
+.recrutmentInformation-card-content {
+    background-color: #eeeeee;
+    border-radius: 10px;
+    padding: 30px;
+    margin-bottom: 20px;
+    line-height: 40px;
+}
+
+.recrutmentInformation-card-content b, .recrutmentInformation-card-content span {
+    font-size: 20px;
+    margin: 10px;
+}
+
+.recrutmentInformation-row {
+    display: flex;
+    gap: 50px;
+}
+
+.recrutmentInformation-documents-buttons {
+    margin: 20px;
+    display: flex;
+    gap: 10px;
+}
+
+.recrutmentInformation-actions {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+}
+
+.recrutmentInformation-deny{
+    background-color: #6E2121;
+}
+
+.recrutmentInformation-deny:hover{
+    background-color: #792727;
+}
+
+.recrutmentInformation-approve{
+    background-color: #6A9955;
+}
+
+.recrutmentInformation-approve:hover{
+    background-color: #73a15d;
+}

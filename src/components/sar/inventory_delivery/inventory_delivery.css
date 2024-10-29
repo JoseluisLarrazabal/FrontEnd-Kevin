@@ -1,0 +1,130 @@
+.inventoryDelivery-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    background-color: #ffffff;
+    min-height: 100vh;
+    width: 100%;
+}
+
+.inventoryDelivery-form {
+    background-color: #EEEEEE;
+    padding: 2rem;
+    border-radius: 5px;
+    box-shadow: rgba(0, 0, 0, 0.1) 1.95px 1.95px 10px;
+    width: 100%;
+    max-width: 1000px;
+    color: #000000;
+}
+
+.inventoryDelivery-header {
+    font-weight: normal;
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+
+    .inventoryDelivery-header button {
+        background: none;
+        border: none;
+        padding: 0;
+        font-size: 2rem;
+        cursor: pointer;
+        display: flex;
+        align-items: end;
+        margin-right: 10px;
+    }
+
+.inventoryDelivery-form .form-group {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 1rem;
+    width: 100%;
+}
+
+.inventoryDelivery-form .form-group-row {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+.inventoryDelivery-form .form-group-row .form-group {
+    flex: 1;
+}
+
+.inventoryDelivery-form label {
+    margin-bottom: 0.5rem;
+    color: #333;
+    font-weight: bold;
+}
+
+.inventoryDelivery-form input[type="text"],
+.inventoryDelivery-form select {
+    padding: 0.5rem;
+    border: 1.5px solid #333;
+    border-radius: 5px;
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+}
+
+.inventoryDelivery-form button {
+    padding: 0.7rem;
+    background-color: #2F2C79;
+    color: #ffffff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: bold;
+    width: 100px;
+}
+
+.inventoryDelivery-table {
+    width: 80%;
+    border-collapse: collapse;
+    background-color: #ffffff;
+    border-radius: 5px;
+    overflow: hidden;
+    margin-top: 1rem;
+    color: #000000;
+}
+
+.inventoryDelivery-table th,
+.inventoryDelivery-table td {
+    padding: 0.75rem;
+    text-align: center;
+    border: 1px solid #dddddd;
+}
+
+.inventoryDelivery-table th {
+    background-color: #2F2C79;
+    color: #ffffff;
+    font-weight: bold;
+}
+
+.inventoryDelivery-table tbody tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+.inventoryDelivery-form .form-buttons {
+    margin-top: 1rem; 
+    display: flex;
+    justify-content: center;
+}
+
+
+.inventoryDelivery-header button {
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    padding: 0;
+    margin: 0;
+    color: rgb(0, 0, 0)
+    
+}
+
+.inventoryDelivery-form .icon-button-trash {
+    color: #ffffff; 
+}

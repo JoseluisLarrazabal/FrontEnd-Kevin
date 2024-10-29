@@ -1,0 +1,82 @@
+.personalAttendanceReport-container {
+    margin: 35px;
+    padding: 30px;
+    border-radius: 10px;
+    background-color: #ffffff; 
+}
+
+.personalAttendanceReport-header {
+    font-weight: normal;
+    display: flex;
+    align-items: center;
+    width: 100%;
+  }
+  
+  .personalAttendanceReport-header button {
+    background: none;
+    border: none;
+    padding: 0;
+    font-size: 2rem;
+    cursor: pointer;
+    display: flex;
+    align-items: end;
+    margin-right: 10px;
+  }
+
+.personalAttendanceReport-actions {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.personalAttendanceReport-content {
+    width: 100%;
+    margin-top: 20px;
+}
+
+.personalAttendanceReport-table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: #171A4A;
+    border-radius: 7px;
+    overflow: hidden;
+}
+
+.personalAttendanceReport-table th,
+.personalAttendanceReport-table td {
+    padding: 0.75rem;
+    text-align: left;
+    color: #fff;
+}
+
+.personalAttendanceReport-table th {
+    background-color: #171A4A;
+    font-weight: bold;
+}
+
+.personalAttendanceReport-table tbody tr {
+    background-color: #24365C;
+}
+
+.personalAttendanceReport-table tbody tr:nth-child(even) {
+    background-color: #1A2C48;
+}
+
+.personalAttendanceReport-table tbody tr:hover {
+    background-color: #2C4878;
+}
+
+.personalAttendanceReport-icon-button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    margin: 0;
+    color: #fff;
+    font-size: 1.5rem;
+}
+
+.personalAttendanceReport-icon-button:hover {
+    color: #ccc;
+}

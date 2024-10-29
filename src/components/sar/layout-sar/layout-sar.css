@@ -1,0 +1,160 @@
+.sar-main-container {
+    display: flex;
+    height: 98vh;
+    width: 98%;
+}
+
+.sar-menu-vertical {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 7px;
+    width: 300px;
+    background-color: #ffffff;
+    box-shadow: rgba(0, 0, 0, 0.5) 1.95px 1.95px 10px;
+    color: rgb(0, 0, 0);
+    padding: 20px 0;
+    overflow-y: auto;
+}
+.sar-menu-vertical::-webkit-scrollbar {
+    display: none;
+}
+
+    .sar-menu-vertical img {
+        width: 70%;
+        margin-top: 1rem;
+    }
+
+.sar-menu-items-container {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 90%;
+}
+
+.sar-menu-item {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    text-decoration: none;
+    color: rgb(0, 0, 0);
+    margin: 1rem 0;
+    font-size: 1.2rem;
+    cursor: pointer;
+    padding: 0.5rem;
+    border-radius: 5px;
+}
+
+.sar-menu-item:hover {
+    color: #ffffff;
+    background-color: #171A4A;    
+}
+    .sar-menu-item svg{
+        font-size: 2.5rem;
+    }
+
+    .sar-menu-item span {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+.sar-menu-item-selected {
+    color: #ffffff;
+    background-color: #171A4A;
+}
+
+.sar-sub-options {
+    display: flex;
+    flex-direction: column;
+    margin-left: 20px;
+    border-left: 2px solid #2F2C79;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-out;
+}
+  
+.sar-sub-options.show {
+    max-height: 110px;
+}
+  
+.sar-sub-menu-item {
+    text-decoration: none;
+    color: black;
+    padding: 10px 10px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    border-radius: 0px 5px 5px 0px;
+}
+
+.sar-sub-menu-item:hover {
+    color: #ffffff;
+    background-color: #2F2C79;
+}
+
+.sar-main-container main {
+    flex-grow: 1;
+    padding: 1rem;
+    overflow-y: auto;
+    background-color: white;
+    margin-left: 2rem;
+    border-radius: 7px;
+}
+
+.sar-menu-log-out {
+    align-self: flex-start;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    padding: 0 20px;
+    box-sizing: border-box;
+}
+
+    .sar-menu-log-out button svg {
+        font-size: 1.7rem;
+        color: #000000;
+        cursor: pointer;
+    }
+
+    .sar-menu-log-out button svg:hover {
+        color: #eeeeee;
+    }
+
+.sar-dropdown-toggle {
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.sar-dropdown-menu {
+    position: absolute;
+    left: 250px;
+    background-color: #2F2C79;
+    border: 1px solid #252363;
+    border-radius: 4px;
+    width: 200px;
+}
+
+.sar-dropdown-item {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    color: #FFFFFF;
+    text-decoration: none;
+}
+    .sar-dropdown-item svg {
+        font-size: 1.5rem;
+        margin-right: 1rem;
+        color: #FFFFFF;
+    }
+
+.sar-dropdown-item:hover {
+    background-color: #3a3791;
+} 
+
+hr {
+    width: 90%;
+}
